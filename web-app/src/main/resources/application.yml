@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+ kafka:
+  producer:
+   bootstrap-servers: ${KAFKA_BOOSTRAP_SERVERS:121.196.46.197:9092}
+   batch-size: 65536
+   buffer-memory: 524288
