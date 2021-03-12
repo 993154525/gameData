@@ -7,3 +7,8 @@ spring:
    bootstrap-servers: ${KAFKA_BOOSTRAP_SERVERS:121.196.46.197:9092}
    batch-size: 65536
    buffer-memory: 524288
+ datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: "jdbc:mysql://${MYSQL_HOST:10.0.1.220:3306}/play800test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8"
+  username: "${MYSQL_NAME:root}"
+  password: "${MYSQL_PASSWORD:play800}"

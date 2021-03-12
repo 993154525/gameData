@@ -1,0 +1,12 @@
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\sinks\CustomJdbcSink.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\jobs\NewsRegistersAscribe.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\jobs\RegistersAscribeBatch.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\utils\JdbcUtils.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\utils\JsonUtils.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\utils\ObjectUtils.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\models\UserReg.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\test.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\sources\EventStreamManager.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\jobs\FlinkAndKafka.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\utils\GlobalConfig.java
+D:\project\jproject\gameData\flink-app\src\main\java\com\st\test\druid\DBPoolConnection.java
