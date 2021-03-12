@@ -215,7 +215,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -313,17 +313,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -355,8 +344,8 @@
       <item itemvalue="Application.NewsRegistersAscribe" />
       <item itemvalue="Application.RegistersAscribeBatch" />
       <item itemvalue="Application.FlinkAndKafka" />
-      <item itemvalue="Spring Boot.WebAppApplication" />
       <item itemvalue="Application.test" />
+      <item itemvalue="Spring Boot.WebAppApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -380,7 +369,8 @@
       <option name="presentableId" value="Default" />
       <updated>1609637346306</updated>
       <workItem from="1609637354588" duration="10434000" />
-      <workItem from="1614930637384" duration="54184000" />
+      <workItem from="1614930637384" duration="56184000" />
+      <workItem from="1615544278013" duration="347000" />
     </task>
     <servers />
   </component>
