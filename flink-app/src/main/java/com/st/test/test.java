@@ -17,17 +17,25 @@ public class test {
         ResultSet rs = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://root:play800@10.0.1.220:3306/play800test?&rewriteBatchedStatements=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false");
-            pre = connection.prepareStatement("INSERT INTO test_?(id_?) values(?)");
-            pre.setInt(1, 1);
-            pre.setInt(2, 2);
-            pre.setInt(3, 6);
-            boolean execute = pre.execute();
-            System.out.println(execute);
+            pre = connection.prepareStatement("select id,aid,dsp " +
+                    "from adv_click_new_log_? " +
+                    "FORCE index(time) where " +
+                    "`ip` = ? " +
+                    "AND channel != 'default' " +
+                    "AND time BETWEEN ? AND ? " +
+                    "ORDER BY time desc ");
+            String start = "2021-03-04 13:15:58";
+            String end = "2021-03-11 13:15:58";
+            pre.setInt(1, 3);
+            pre.setString(2, "223.104.65.150");
+            pre.setString(3, start);
+            pre.setString(4, end);
+            rs = pre.executeQuery();
 
-//            while (rs.next()) {
-//                System.out.println(rs.getInt(1));
-//                System.out.println(rs.getString(2));
-//            }
+            if (rs != null && rs.next()) {
+                System.out.println("1");
+                System.out.println(rs);
+            }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

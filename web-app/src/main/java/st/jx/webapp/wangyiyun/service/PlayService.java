@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import st.jx.webapp.wangyiyun.model.ActivateLog;
-import st.jx.webapp.wangyiyun.model.AdvClickNewLog;
-import st.jx.webapp.wangyiyun.model.UserReg;
+import st.jx.webapp.wangyiyun.model.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -83,11 +81,39 @@ public class PlayService {
 
     @RequestMapping(value = "getActivateLog", method = RequestMethod.GET)
     public void getActivateLog() throws IOException {
-        List<ActivateLog> activateLogList = jdbcTemplate.query("select * from log_activate_3_3"
+        List<ActivateLog> activateLogList = jdbcTemplate.query("select * from log_activate_3_4"
                 , new Object[]{}, new BeanPropertyRowMapper<>(ActivateLog.class));
         activateLogList.forEach(activateLog -> {
             try {
                 kafkaTemplate.send("play800-log-activate", JsonUtil.toJson(activateLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getRegLog", method = RequestMethod.GET)
+    public void getRegLog() throws IOException {
+        List<UserRegLog> userRegLogs = jdbcTemplate.query("select * from user_reg_1"
+                , new Object[]{}, new BeanPropertyRowMapper<>(UserRegLog.class));
+        userRegLogs.forEach(userRegLog -> {
+            try {
+                kafkaTemplate.send("play800-log-reg", JsonUtil.toJson(userRegLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getLoginLog", method = RequestMethod.GET)
+    public void getLoginLog() throws IOException {
+        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23"
+                , new Object[]{}, new BeanPropertyRowMapper<>(UserLog.class));
+        userLogs.forEach(userLog -> {
+            try {
+                kafkaTemplate.send("play800-log-login", JsonUtil.toJson(userLog));
             } catch (IOException e) {
                 e.printStackTrace();
             }

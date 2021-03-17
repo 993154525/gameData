@@ -1,17 +1,19 @@
-package com.st.test.models;
+package st.jx.webapp.wangyiyun.model;
 
-import org.apache.flink.calcite.shaded.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.apache.flink.calcite.shaded.com.fasterxml.jackson.annotation.JsonProperty;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * 注册日志表
  * @author shaotian
- * @date 2021-03-09 13:44
+ * @date 2021-03-11 13:52
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserReg {
+public class UserRegLog {
 
     @JsonProperty("gid")
-    private Integer gid;
+    private String gid;
 
     @JsonProperty("aid")
     private String aid;
@@ -56,7 +58,7 @@ public class UserReg {
     private String ext2;
 
     @JsonProperty("activate_id")
-    private int activateId;
+    private String activateId;
 
     @JsonProperty("ext1")
     private String ext1;
@@ -64,11 +66,11 @@ public class UserReg {
     @JsonProperty("dsp")
     private String dsp;
 
-    public Integer getGid() {
+    public String getGid() {
         return gid;
     }
 
-    public void setGid(Integer gid) {
+    public void setGid(String gid) {
         this.gid = gid;
     }
 
@@ -184,11 +186,11 @@ public class UserReg {
         this.ext2 = ext2;
     }
 
-    public int getActivateId() {
+    public String getActivateId() {
         return activateId;
     }
 
-    public void setActivateId(int activateId) {
+    public void setActivateId(String activateId) {
         this.activateId = activateId;
     }
 
@@ -206,5 +208,29 @@ public class UserReg {
 
     public void setDsp(String dsp) {
         this.dsp = dsp;
+    }
+
+    @Override
+    public String toString() {
+        return "UserReg{" +
+                "gid='" + gid + '\'' +
+                ", aid='" + aid + '\'' +
+                ", sid='" + sid + '\'' +
+                ", uid='" + uid + '\'' +
+                ", username='" + username + '\'' +
+                ", roleId='" + roleId + '\'' +
+                ", roleName='" + roleName + '\'' +
+                ", ip='" + ip + '\'' +
+                ", idfa='" + idfa + '\'' +
+                ", oaid='" + oaid + '\'' +
+                ", deviceType='" + deviceType + '\'' +
+                ", time='" + time + '\'' +
+                ", mac='" + mac + '\'' +
+                ", keywordId='" + keywordId + '\'' +
+                ", ext2='" + ext2 + '\'' +
+                ", activateId='" + activateId + '\'' +
+                ", ext1='" + ext1 + '\'' +
+                ", dsp='" + dsp + '\'' +
+                '}';
     }
 }

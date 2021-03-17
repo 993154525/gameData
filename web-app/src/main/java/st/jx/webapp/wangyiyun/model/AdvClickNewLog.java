@@ -4,8 +4,6 @@ package st.jx.webapp.wangyiyun.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.sql.Timestamp;
-
 /**
  * 点击日志表
  * @author shaotian
@@ -48,7 +46,7 @@ public class AdvClickNewLog {
     private boolean callbacked;
 
     @JsonProperty("time")
-    private Timestamp time;
+    private String time;
 
     @JsonProperty("init_aid")
     private String initAid;
@@ -156,11 +154,11 @@ public class AdvClickNewLog {
         this.callbacked = callbacked;
     }
 
-    public Timestamp getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
