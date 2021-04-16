@@ -9,12 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3b6c7389-a2fc-46e0-a9bd-19841db6f656" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/models/UserReg.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/models/UserReg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/model/AdvClickNewLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/model/AdvClickNewLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,11 +202,13 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jingxia job/media-reports-collector" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -381,7 +378,14 @@
       <workItem from="1614930637384" duration="56184000" />
       <workItem from="1615544278013" duration="8562000" />
       <workItem from="1615794286417" duration="2167000" />
-      <workItem from="1615951350258" duration="5958000" />
+      <workItem from="1615951350258" duration="22534000" />
+      <workItem from="1616644089903" duration="2020000" />
+      <workItem from="1616740803068" duration="1289000" />
+      <workItem from="1617257998086" duration="5865000" />
+      <workItem from="1617676361486" duration="599000" />
+      <workItem from="1618303163681" duration="1525000" />
+      <workItem from="1618304702018" duration="1813000" />
+      <workItem from="1618454053380" duration="5938000" />
     </task>
     <servers />
   </component>

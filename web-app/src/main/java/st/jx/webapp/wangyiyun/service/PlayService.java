@@ -109,11 +109,123 @@ public class PlayService {
 
     @RequestMapping(value = "getLoginLog", method = RequestMethod.GET)
     public void getLoginLog() throws IOException {
-        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23"
+        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23_24"
                 , new Object[]{}, new BeanPropertyRowMapper<>(UserLog.class));
         userLogs.forEach(userLog -> {
             try {
                 kafkaTemplate.send("play800-log-login", JsonUtil.toJson(userLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getIncomeLog", method = RequestMethod.GET)
+    public void getIncmeLog() throws IOException {
+        List<IncomeLog> incomeLogs = jdbcTemplate.query("select * from income_log"
+                , new Object[]{}, new BeanPropertyRowMapper<>(IncomeLog.class));
+        incomeLogs.forEach(incomeLog -> {
+            try {
+                kafkaTemplate.send("play800-log-income", JsonUtil.toJson(incomeLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getDataIncome", method = RequestMethod.GET)
+    public void getDataIncome() throws IOException {
+        List<DataIncome> dataIncomes = jdbcTemplate.query("select * from tp_data_income"
+                , new Object[]{}, new BeanPropertyRowMapper<>(DataIncome.class));
+        dataIncomes.forEach(dataIncome -> {
+            try {
+                kafkaTemplate.send("play800-data-income", JsonUtil.toJson(dataIncome));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getDataCost", method = RequestMethod.GET)
+    public void getDataCost() throws IOException {
+        List<DataCost> dataCosts = jdbcTemplate.query("select * from tp_data_cost"
+                , new Object[]{}, new BeanPropertyRowMapper<>(DataCost.class));
+        dataCosts.forEach(dataCost -> {
+            try {
+                kafkaTemplate.send("play800-data-cost", JsonUtil.toJson(dataCost));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getSdkPay", method = RequestMethod.GET)
+    public void getSdkPay() throws IOException {
+        List<SdkPayment> sdkPayments = jdbcTemplate.query("select * from sdk_payment where channelid != 116 AND status in (1,2) limit 1000"
+                , new Object[]{}, new BeanPropertyRowMapper<>(SdkPayment.class));
+        sdkPayments.forEach(sdkPayment -> {
+            try {
+                kafkaTemplate.send("play800-sdk-pay", JsonUtil.toJson(sdkPayment));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getPayPayment", method = RequestMethod.GET)
+    public void getPayPayment() throws IOException {
+        List<PayPayment> payPayments = jdbcTemplate.query("select * from pay_payment where status in (1,3,4) limit 100"
+                , new Object[]{}, new BeanPropertyRowMapper<>(PayPayment.class));
+        payPayments.forEach(payPayment -> {
+            try {
+                kafkaTemplate.send("play800-pay-payment", JsonUtil.toJson(payPayment));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getKeep", method = RequestMethod.GET)
+    public void getKeep() throws IOException {
+        List<KeepLogin> keepLogins = jdbcTemplate.query("select * from tp_data_register_keep_new where keep_day in (1,3,7,15,30) ORDER BY `period` desc limit 1000"
+                , new Object[]{}, new BeanPropertyRowMapper<>(KeepLogin.class));
+        keepLogins.forEach(keepLogin -> {
+            try {
+                kafkaTemplate.send("play800-login-keep", JsonUtil.toJson(keepLogin));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getRecord", method = RequestMethod.GET)
+    public void getRecord() throws IOException {
+        List<Record> records = jdbcTemplate.query("select * from data_cost_record where updatetime between '2021-04-15 00:00:00' AND '2021-04-15 23:59:59' "
+                , new Object[]{}, new BeanPropertyRowMapper<>(Record.class));
+        records.forEach(record -> {
+            try {
+                kafkaTemplate.send("play800-cost-record", JsonUtil.toJson(record));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getLtv", method = RequestMethod.GET)
+    public void getLtv() throws IOException {
+        List<Ltv> ltvs = jdbcTemplate.query("select * from tp_data_ltv where period = '2021-04-12'"
+                , new Object[]{}, new BeanPropertyRowMapper<>(Ltv.class));
+        ltvs.forEach(ltv -> {
+            try {
+                kafkaTemplate.send("play800-income-ltv", JsonUtil.toJson(ltv));
             } catch (IOException e) {
                 e.printStackTrace();
             }
