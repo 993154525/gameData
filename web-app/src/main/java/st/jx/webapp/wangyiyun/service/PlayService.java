@@ -137,7 +137,7 @@ public class PlayService {
 
     @RequestMapping(value = "getDataIncome", method = RequestMethod.GET)
     public void getDataIncome() throws IOException {
-        List<DataIncome> dataIncomes = jdbcTemplate.query("select * from tp_data_income"
+        List<DataIncome> dataIncomes = jdbcTemplate.query("select * from tp_data_income WHERE `period` = '2021-04-16' LIMIT 100"
                 , new Object[]{}, new BeanPropertyRowMapper<>(DataIncome.class));
         dataIncomes.forEach(dataIncome -> {
             try {
@@ -207,11 +207,11 @@ public class PlayService {
 
     @RequestMapping(value = "getRecord", method = RequestMethod.GET)
     public void getRecord() throws IOException {
-        List<Record> records = jdbcTemplate.query("select * from data_cost_record where updatetime between '2021-04-15 00:00:00' AND '2021-04-15 23:59:59' "
+        List<Record> records = jdbcTemplate.query("select * from data_cost_record where id = 620955 "
                 , new Object[]{}, new BeanPropertyRowMapper<>(Record.class));
         records.forEach(record -> {
             try {
-                kafkaTemplate.send("play800-cost-record", JsonUtil.toJson(record));
+                kafkaTemplate.send("play800-data-record", JsonUtil.toJson(record));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -226,6 +226,34 @@ public class PlayService {
         ltvs.forEach(ltv -> {
             try {
                 kafkaTemplate.send("play800-income-ltv", JsonUtil.toJson(ltv));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getGameConfig", method = RequestMethod.GET)
+    public void getGameConfig() throws IOException {
+        List<GameConfig> gameConfigs = jdbcTemplate.query("select * from config_game"
+                , new Object[]{}, new BeanPropertyRowMapper<>(GameConfig.class));
+        gameConfigs.forEach(gameConfig -> {
+            try {
+                kafkaTemplate.send("play800-data-config", JsonUtil.toJson(gameConfig));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getChannelConfig", method = RequestMethod.GET)
+    public void getGameChannel() throws IOException {
+        List<ChannelConfig> channelConfigs = jdbcTemplate.query("select * from config_channel"
+                , new Object[]{}, new BeanPropertyRowMapper<>(ChannelConfig.class));
+        channelConfigs.forEach(channelConfig -> {
+            try {
+                kafkaTemplate.send("play800-data-config", JsonUtil.toJson(channelConfig));
             } catch (IOException e) {
                 e.printStackTrace();
             }
