@@ -8,22 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6c7389-a2fc-46e0-a9bd-19841db6f656" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/model/ChannelConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/model/GameConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/druid/DBPoolConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/jobs/FlinkAndKafka.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/jobs/NewsRegistersAscribe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/jobs/RegistersAscribeBatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/models/UserReg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/sinks/CustomJdbcSink.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/sources/EventStreamManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/utils/GlobalConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/utils/JdbcUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/utils/JsonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-app/target/classes/com/st/test/utils/ObjectUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +209,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jingxia job/job/play800-marketing-ascribe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jingxia job/job/play800-marketing-batch" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -334,17 +321,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -411,7 +387,10 @@
       <workItem from="1617676361486" duration="599000" />
       <workItem from="1618303163681" duration="1525000" />
       <workItem from="1618304702018" duration="1813000" />
-      <workItem from="1618454053380" duration="24125000" />
+      <workItem from="1618454053380" duration="25453000" />
+      <workItem from="1620267048068" duration="4362000" />
+      <workItem from="1621217807588" duration="2021000" />
+      <workItem from="1621827263903" duration="1221000" />
     </task>
     <servers />
   </component>
@@ -483,6 +462,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

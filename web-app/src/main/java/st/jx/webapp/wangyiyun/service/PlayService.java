@@ -123,7 +123,7 @@ public class PlayService {
 
     @RequestMapping(value = "getIncomeLog", method = RequestMethod.GET)
     public void getIncmeLog() throws IOException {
-        List<IncomeLog> incomeLogs = jdbcTemplate.query("select * from income_log"
+        List<IncomeLog> incomeLogs = jdbcTemplate.query("select * from income_log limit 1000"
                 , new Object[]{}, new BeanPropertyRowMapper<>(IncomeLog.class));
         incomeLogs.forEach(incomeLog -> {
             try {
@@ -221,7 +221,7 @@ public class PlayService {
 
     @RequestMapping(value = "getLtv", method = RequestMethod.GET)
     public void getLtv() throws IOException {
-        List<Ltv> ltvs = jdbcTemplate.query("select * from tp_data_ltv where period = '2021-04-12'"
+        List<Ltv> ltvs = jdbcTemplate.query("select * from tp_data_ltv limit 1000"
                 , new Object[]{}, new BeanPropertyRowMapper<>(Ltv.class));
         ltvs.forEach(ltv -> {
             try {
