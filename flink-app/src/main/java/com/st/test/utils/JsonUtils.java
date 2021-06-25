@@ -17,9 +17,9 @@ public class JsonUtils {
 
     static {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
-            false);
+                false);
         objectMapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES,
-            false);
+                false);
     }
 
     public static JsonNode toJsonNode(String value) throws JsonProcessingException {
@@ -36,13 +36,17 @@ public class JsonUtils {
 
     public static <T> List<T> fromJsonList(String json, Class<T> clazz) throws JsonProcessingException {
         return objectMapper.readValue(json, objectMapper.getTypeFactory()
-            .constructCollectionType(List.class, clazz));
+                .constructCollectionType(List.class, clazz));
     }
 
-    public static void main(String[] args) {
-        String str = "s" + new String("s");
-        String str2 = "ss";
-        System.out.println(str == str2);
+    public static String toJsonOneValue(String value, String str) throws JsonProcessingException {
+        JsonNode jsonNode = objectMapper.readTree(value);
+
+        return jsonNode.get(str).asText();
     }
+
+    public static void main(String[] args) throws JsonProcessingException {
+    }
+
 
 }

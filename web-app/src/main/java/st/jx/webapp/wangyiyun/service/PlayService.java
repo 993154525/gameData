@@ -81,7 +81,7 @@ public class PlayService {
 
     @RequestMapping(value = "getActivateLog", method = RequestMethod.GET)
     public void getActivateLog() throws IOException {
-        List<ActivateLog> activateLogList = jdbcTemplate.query("select * from log_activate_3_4"
+        List<ActivateLog> activateLogList = jdbcTemplate.query("select * from log_activate_2 limit 1000"
                 , new Object[]{}, new BeanPropertyRowMapper<>(ActivateLog.class));
         activateLogList.forEach(activateLog -> {
             try {
@@ -95,8 +95,8 @@ public class PlayService {
 
     @RequestMapping(value = "getRegLog", method = RequestMethod.GET)
     public void getRegLog() throws IOException {
-        List<UserRegLog> userRegLogs = jdbcTemplate.query("select * from user_reg_1"
-                , new Object[]{}, new BeanPropertyRowMapper<>(UserRegLog.class));
+        List<UserLog> userRegLogs = jdbcTemplate.query("select * from user_reg"
+                , new Object[]{}, new BeanPropertyRowMapper<>(UserLog.class));
         userRegLogs.forEach(userRegLog -> {
             try {
                 kafkaTemplate.send("play800-log-reg", JsonUtil.toJson(userRegLog));
@@ -109,7 +109,7 @@ public class PlayService {
 
     @RequestMapping(value = "getLoginLog", method = RequestMethod.GET)
     public void getLoginLog() throws IOException {
-        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23_24"
+        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23 order by `time` asc limit 1000 "
                 , new Object[]{}, new BeanPropertyRowMapper<>(UserLog.class));
         userLogs.forEach(userLog -> {
             try {
@@ -121,9 +121,23 @@ public class PlayService {
 
     }
 
+    @RequestMapping(value = "getAscribeLogin", method = RequestMethod.GET)
+    public void getAscribeLogin() throws IOException {
+        List<UserLog> userLogs = jdbcTemplate.query("select * from user_login_23 order by `time` asc limit 1000 "
+                , new Object[]{}, new BeanPropertyRowMapper<>(UserLog.class));
+        userLogs.forEach(userLog -> {
+            try {
+                kafkaTemplate.send("play800-log-login-aggre", JsonUtil.toJson(userLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
     @RequestMapping(value = "getIncomeLog", method = RequestMethod.GET)
     public void getIncmeLog() throws IOException {
-        List<IncomeLog> incomeLogs = jdbcTemplate.query("select * from income_log limit 1000"
+        List<IncomeLog> incomeLogs = jdbcTemplate.query("select * from income_log where income_money = 0.00"
                 , new Object[]{}, new BeanPropertyRowMapper<>(IncomeLog.class));
         incomeLogs.forEach(incomeLog -> {
             try {
@@ -254,6 +268,48 @@ public class PlayService {
         channelConfigs.forEach(channelConfig -> {
             try {
                 kafkaTemplate.send("play800-data-config", JsonUtil.toJson(channelConfig));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getFirstPay", method = RequestMethod.GET)
+    public void getFirstPay() throws IOException {
+        List<FirstPay> firstPays = jdbcTemplate.query("select * from payment_register limit 1000"
+                , new Object[]{}, new BeanPropertyRowMapper<>(FirstPay.class));
+        firstPays.forEach(firstPay -> {
+            try {
+                kafkaTemplate.send("play800-payment-register", JsonUtil.toJson(firstPay));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getRole", method = RequestMethod.GET)
+    public void getRole() throws IOException {
+        List<RoleLog> roleLogs = jdbcTemplate.query("select * from log_create_role_2 where time >= '2021-06-10'"
+                , new Object[]{}, new BeanPropertyRowMapper<>(RoleLog.class));
+        roleLogs.forEach(roleLog -> {
+            try {
+                kafkaTemplate.send("play800-log-role-origin", JsonUtil.toJson(roleLog));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+    }
+
+    @RequestMapping(value = "getSummary", method = RequestMethod.GET)
+    public void getSummary() throws IOException {
+        List<SummaryLog> summaryLogs = jdbcTemplate.query("select * from tp_data_summary_view limit 1000"
+                , new Object[]{}, new BeanPropertyRowMapper<>(SummaryLog.class));
+        summaryLogs.forEach(summaryLog -> {
+            try {
+                kafkaTemplate.send("play800-data-summary", JsonUtil.toJson(summaryLog));
             } catch (IOException e) {
                 e.printStackTrace();
             }

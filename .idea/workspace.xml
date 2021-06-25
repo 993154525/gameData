@@ -8,7 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b6c7389-a2fc-46e0-a9bd-19841db6f656" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/model/SummaryLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gameData.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/GlobalConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/GlobalConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/JdbcUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/JdbcUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/JsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/ObjectUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/flink-app/src/main/java/com/st/test/utils/ObjectUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web-app/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -73,9 +83,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\project\jrepository" />
-        <option name="mavenHome" value="D:\idea\apache-maven-3.6.3" />
-        <option name="userSettingsFile" value="D:\idea\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="localRepository" value="D:\linux\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\linux\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -209,7 +219,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jingxia job/job/play800-marketing-batch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -222,10 +232,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\linux\sproject\code\play800\gameData\flink-app\src\main\java\com\st\test\utils" />
+      <recent name="D:\linux\sproject\code\play800\gameData\flink-app\src\main\java\com\st\test\druid" />
       <recent name="D:\project\jproject\gameData\web-app\src\main\java\st\jx\webapp\wangyiyun\model" />
       <recent name="D:\project\jproject\gameData\flink-app\src\main\resources" />
     </key>
@@ -238,9 +250,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="st.jx.webapp.wangyiyun.model" />
       <recent name="com.st.test.utils" />
+      <recent name="com.st.test.models" />
       <recent name="com.st.util" />
       <recent name="com.st.util.dao" />
-      <recent name="st.jx.webapp.wangyiyun.config" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WebAppApplication">
@@ -391,6 +403,14 @@
       <workItem from="1620267048068" duration="4362000" />
       <workItem from="1621217807588" duration="2021000" />
       <workItem from="1621827263903" duration="1221000" />
+      <workItem from="1621908212562" duration="1774000" />
+      <workItem from="1621933711019" duration="5861000" />
+      <workItem from="1621996481694" duration="1475000" />
+      <workItem from="1622168431001" duration="3725000" />
+      <workItem from="1622432660133" duration="13221000" />
+      <workItem from="1623050665752" duration="4631000" />
+      <workItem from="1623219011605" duration="5124000" />
+      <workItem from="1624344162346" duration="720000" />
     </task>
     <servers />
   </component>
@@ -471,10 +491,19 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLNonTransientConnectionException" package="java.sql" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/flink-app/src/main/java/com/st/test/test.java</url>
           <line>35</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web-app/src/main/java/st/jx/webapp/wangyiyun/service/PlayService.java</url>
+          <line>293</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

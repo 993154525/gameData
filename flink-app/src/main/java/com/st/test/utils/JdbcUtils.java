@@ -30,26 +30,23 @@ public class JdbcUtils {
         return colNames;
     }
 
-    public static <T> T getObjectByQuery(T entity, String sql, String url, Object... params) {
-        Connection conn = null;
+    public static <T> T getObjectByQuery(T entity, String sql, Connection conn, Object... params) {
         PreparedStatement pst = null;
-        T richEntity = null;
         ResultSet rs = null;
         try {
-            conn = DriverManager.getConnection(url);
             pst = conn.prepareStatement(sql);
             for (int i = 0; i < params.length; i++) {
                 pst.setObject(i + 1, params[i]);
             }
             rs = pst.executeQuery();
             List<String> colNames = JdbcUtils.getColNames(rs);
-            richEntity = ObjectUtils.setEntityPropertyValue(entity, rs, colNames);
+            com.play800.marketing.utils.ObjectUtils.setEntityPropertyValue(entity, rs, colNames);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            JdbcUtils.jdbcClose(rs, pst, conn);
+            JdbcUtils.jdbcClose(rs, pst, null);
         }
-        return richEntity;
+        return entity;
     }
 
     public static Connection getConnection(String input) {
@@ -58,6 +55,17 @@ public class JdbcUtils {
             conn = DriverManager.getConnection(input);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }
+        return conn;
+    }
+
+    public static Connection getConnection(String input, String username, String password) {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(input, username, password);
+        } catch (SQLException throwables) {
+            logger.info("连接异常，地址为：" + input);
+            logger.info(throwables.getMessage());
         }
         return conn;
     }
@@ -89,15 +97,23 @@ public class JdbcUtils {
     public static void main(String[] args) {
         Connection conn = null;
         PreparedStatement pre = null;
-        PreparedStatement pre2 = null;
+        String sql = "INSERT INTO `play800test`.`pay_types`(`name`, `code`, `sort_weight`, `created_at`, `updated_at`, `status`) " +
+                "VALUES (?,?,?,?,?,?)";
         try {
-//            conn = DriverManager.getConnection("jdbc:mysql://root:kuafugame2018@39.108.210.120:3306/ygwtest?&rewriteBatchedStatements=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false");
-            pre = conn.prepareStatement(null);
+            conn = DriverManager.getConnection("jdbc:mysql://root:play800@10.0.1.220:3306/play800test?&rewriteBatchedStatements=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&connectTimeout=720000&socketTimeout=720000");
 
-            pre.setObject(1, "5");
-            pre.setObject(2, "16620");
-            pre.setObject(3, "2020-08-16 00:00:00.0");
-            pre.execute();
+            pre = conn.prepareStatement(sql);
+            pre.setString(1, "NULL");
+            pre.setString(2, "1754");
+            pre.setInt(3, 22);
+            pre.setString(4, "2021-04-01 00:00:00");
+            pre.setString(5, "2021-04-01 11:00:00");
+            pre.setInt(6, 1);
+            System.out.println(pre.execute());
+//            ResultSet resultSet = pre.executeQuery();
+//            if (resultSet != null && resultSet.next()) {
+//                System.out.println(resultSet.getDouble(1));
+//            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
